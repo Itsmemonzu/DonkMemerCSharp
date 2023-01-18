@@ -1,4 +1,4 @@
-# DonkMemerC-
+# DonkMemerC#
 A recreation of the famous Discord Bot.
 
 # How to use
