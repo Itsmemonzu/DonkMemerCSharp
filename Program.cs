@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 namespace DonkMemer
 {
@@ -80,13 +80,25 @@ namespace DonkMemer
                     Console.WriteLine("No 2 " + shoplist[2] + " Price: 25$");
                     Console.WriteLine("No 3 " + shoplist[3] + " Price: 15$");
                     Console.WriteLine("");
+                }    
+
+                //Buy
+
+                if(cmd.Contains(commandlist[3]))
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Shoplist:");
+                    Console.WriteLine("");
+                    Console.WriteLine("No 0. " + shoplist[0] + " Price: 100$");
+                    Console.WriteLine("No 1 " + shoplist[1] + " Price: 50$");
+                    Console.WriteLine("No 2 " + shoplist[2] + " Price: 25$");
+                    Console.WriteLine("No 3 " + shoplist[3] + " Price: 15$");
+                    Console.WriteLine("");
 
                     Console.WriteLine("What do you want to buy? Buying command: buy {itemNumber} eg. buy 1");
                     String[] buyCmds = {"buy 0", "buy 1", "buy 2", "buy 3"};
                     Console.WriteLine("");
                     String buyInput = Console.ReadLine();
-
-                    //Buy
                     
                     try
                     {
@@ -146,13 +158,6 @@ namespace DonkMemer
 
                 
 
-                }
-
-                //BuyError
-                if(cmd.Equals(commandlist[3]))
-                {
-                    Console.WriteLine("");
-                    Console.WriteLine("Use shoplist command for buying items!");
                 }
 
 
@@ -288,23 +293,9 @@ namespace DonkMemer
 
                 }
 
-
-
             }
 
         }
 
-
-
-
-
-
-
     }
-
-
-
-
-
-
 }
