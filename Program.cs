@@ -101,7 +101,7 @@ namespace DonkMemer
                     {
 
                         
-                        if(buyInput.Equals(buyCmds[0]) && bal >= 100)
+                        if(buyInput.Equals(buyCmds[0]) && bal >= 100 && !inventory.Contains("HitBlast's Refurbished M1 Mac"))
                         {
                             Console.WriteLine("");
                             Console.WriteLine("Succesfully bought " + shoplist[0] + "!") ;
@@ -113,7 +113,7 @@ namespace DonkMemer
                             Console.WriteLine("");
 
                         }
-                        if(buyInput.Equals(buyCmds[1]) && bal >= 50)
+                        if(buyInput.Equals(buyCmds[1]) && bal >= 50 && !inventory.Contains("+100 Chetona"))
                         {
                             Console.WriteLine("");
                             Console.WriteLine("Succesfully bought " + shoplist[1] + "!") ;
@@ -124,7 +124,7 @@ namespace DonkMemer
                             Console.WriteLine("");
 
                         }
-                        if(buyInput.Equals(buyCmds[2]) && bal >= 25)
+                        if(buyInput.Equals(buyCmds[2]) && bal >= 25 && !inventory.Contains("Bleach"))
                         {
                             Console.WriteLine("");
                             Console.WriteLine("Succesfully bought " + shoplist[2] + "!") ;
@@ -135,7 +135,7 @@ namespace DonkMemer
                             Console.WriteLine("");
 
                         }
-                        if(buyInput.Equals(buyCmds[3]) && bal >= 15)
+                        if(buyInput.Equals(buyCmds[3]) && bal >= 15 && !inventory.Contains("HFC Chicken"))
                         {
                             Console.WriteLine("");
                             Console.WriteLine("Succesfully bought " + shoplist[3] + "!") ;
@@ -290,7 +290,6 @@ namespace DonkMemer
                     writer.Close();
                     Console.WriteLine("Stopping...");
                     break;
-
                 }
 
             }
