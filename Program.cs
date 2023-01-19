@@ -1,15 +1,16 @@
 using System.Text;
-
+using System.IO;
 namespace DonkMemer
 {
     class Program
     {
         static void Main (string[] args)
         {
-            
-            int bal = 100;
+            // Balance
+            string path = Environment.CurrentDirectory;
+           
+            long bal = long.Parse(File.ReadAllText(@path + @"\balance.txt"));
             String currency = "$";
-
 
 
             // Arrays
@@ -22,10 +23,6 @@ namespace DonkMemer
             String[] inventory = new string[] {"Balu", "10 IQ", "Shovel"};
 
             String[] begList = {"Random guy: Oh you poor little beggar, take 80$", "That guy you hate: ew get away", "LOLLL IMAGINE BEGGING", "You stink!", "*Random guy kicks you and runs away*", "Oh no! What a poor little creature... HAHAHA.... Here! Take 379$"};
-
-
-
-
 
 
             // Execution part
@@ -163,7 +160,7 @@ namespace DonkMemer
 
                 //Bet
 
-                if(cmd.Equals(commandlist[4]))
+                if(cmd.Contains(commandlist[4]))
                 {
                     int betBal;
 
@@ -288,6 +285,9 @@ namespace DonkMemer
                 //Stop
                 if(cmd.Equals(commandlist[5]))
                 {
+                    StreamWriter writer = new StreamWriter(@path + @"\balance.txt");
+                    writer.WriteLine(bal);
+                    writer.Close();
                     Console.WriteLine("Stopping...");
                     break;
 
@@ -296,6 +296,5 @@ namespace DonkMemer
             }
 
         }
-
     }
 }
