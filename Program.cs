@@ -305,6 +305,7 @@ namespace DonkMemer
                     {
                         Console.WriteLine("");
                         Console.WriteLine("You denied the Fortune Cookie.");
+                        Console.WriteLine("Bad luck might strike on you...");
                     }
                 }
 
