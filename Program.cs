@@ -14,7 +14,7 @@ namespace DonkMemer
 
 
             // Arrays
-            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie"};
+            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish"};
 
             String[] EightBall = {"Yes", "No"};
 
@@ -34,7 +34,7 @@ namespace DonkMemer
             {       
                 
                 Console.WriteLine("");
-                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, stop");
+                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, stop");
                 Console.WriteLine("");
                 Console.WriteLine("Write a command: ");
                 Console.WriteLine("");
@@ -308,6 +308,119 @@ namespace DonkMemer
                         Console.WriteLine("Bad luck might strike on you...");
                     }
                 }
+
+                //Fish
+
+                if(cmd.Equals(commandlist[9]))
+                {
+                    int[] fishPrices = {3, 4, 5, 7, 9, 12, 13, 2, 15, 17, 16, 19, 20, 22};
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Where do you want the fish?");
+                    Console.WriteLine("");
+                    Console.WriteLine("Lake, River or Ocean?");
+                    Console.WriteLine("");
+
+                    string fishingPlace = Console.ReadLine();
+
+                    if (fishingPlace.Equals("Lake") || fishingPlace.Equals("lake"))
+                    {
+                        string[] lakeFishes = {"Carp", "Black Bullhead", "Green Sunfish", "Crappie", "Channel Catfish", "Bluegill", "Largemouth Bass"};
+                        Random randFish = new Random();  
+                        int indexFish = randFish.Next(lakeFishes.Length);  
+                        
+                        string foundFish = lakeFishes[indexFish];
+
+                        Console.WriteLine("");
+                        Console.WriteLine("You found: " + foundFish);
+
+                        if(inventory.Contains(foundFish))
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("You already own this fish! Selling the found fish.");
+                            Random randPrice = new Random();  
+                            long indexPrice = randPrice.Next(fishPrices.Length);  
+                            bal = bal+indexPrice;
+                            
+                            Console.WriteLine("");
+                            Console.WriteLine("Your current balance: " + bal + currency);
+                        }
+                        if(!inventory.Contains(foundFish))
+                        {
+                            inventory = inventory.Append(foundFish).ToArray();
+                            Console.WriteLine("");
+                            Console.WriteLine("The fish has been added to your inventory. To sell the fish, please use the sell command. \n Example: sell {fishName}, sell Garp");
+
+                        }
+
+
+                    }
+                    if (fishingPlace.Equals("River") || fishingPlace.Equals("river"))
+                    {
+                        string[] riverFishes = {"Eel", "Common Carp", "Tench", "Bream", "Pike", "Chub", "Rainbow Trout"};
+                        Random randFish2 = new Random();  
+                        int indexFish2 = randFish2.Next(riverFishes.Length);  
+                        
+                        string foundFish2 = riverFishes[indexFish2];
+
+                        Console.WriteLine("");
+                        Console.WriteLine("You found: " + foundFish2);
+
+                        if(inventory.Contains(foundFish2))
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("You already own this fish! Selling the found fish.");
+                            Random randPrice = new Random();  
+                            long indexPrice = randPrice.Next(fishPrices.Length);  
+                            bal = bal+indexPrice;
+                            
+                            Console.WriteLine("");
+                            Console.WriteLine("Your current balance: " + bal + currency);
+                        }
+                        if(!inventory.Contains(foundFish2))
+                        {
+                            inventory = inventory.Append(foundFish2).ToArray();
+                            Console.WriteLine("");
+                            Console.WriteLine("The fish has been added to your inventory. To sell the fish, please use the sell command. \n Example: sell {fishName}, sell Garp");
+
+                        }
+
+
+                    }
+                    if (fishingPlace.Equals("Ocean") || fishingPlace.Equals("ocean"))
+                    {
+                        string[] oceanFishes = {"Green Chromis", "Firefish", "Mandarinfish", "Maroon Clownfish", "Tomato Clownfish", "Coral Beauty", "Flame Angelfish"};
+                        Random randFish3 = new Random();  
+                        int indexFish3 = randFish3.Next(oceanFishes.Length);  
+                        
+                        string foundFish3 = oceanFishes[indexFish3];
+
+                        Console.WriteLine("");
+                        Console.WriteLine("You found: " + foundFish3);
+
+                        if(inventory.Contains(foundFish3))
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("You already own this fish! Selling the found fish.");
+                            Random randPrice = new Random();  
+                            long indexPrice = randPrice.Next(fishPrices.Length);  
+                            bal = bal+indexPrice;
+                            
+                            Console.WriteLine("");
+                            Console.WriteLine("Your current balance: " + bal + currency);
+                        }
+                        if(!inventory.Contains(foundFish3))
+                        {
+                            inventory = inventory.Append(foundFish3).ToArray();
+                            Console.WriteLine("");
+                            Console.WriteLine("The fish has been added to your inventory. To sell the fish, please use the sell command. \n Example: sell {fishName}, sell Garp");
+
+                        }
+
+
+                    }
+                }
+               
 
                 //Stop
                 if(cmd.Equals(commandlist[5]))
