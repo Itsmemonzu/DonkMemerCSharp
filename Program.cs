@@ -518,6 +518,7 @@ namespace DonkMemer
                     {
                         if(bal >= 2)
                         {
+                            bal = bal-2;
                             inventory = inventory.Append("2 Cookies").ToArray();
                             Console.WriteLine("Baked 2 Cookies for 2$! They have been added to your inventory.");
                             Console.WriteLine("");
