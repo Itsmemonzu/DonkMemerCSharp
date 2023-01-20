@@ -315,7 +315,7 @@ namespace DonkMemer
                     long[] fishPrices = {3, 4, 5, 7, 9, 12, 13, 2, 15, 17, 16, 19, 20, 22};
 
                     Console.WriteLine("");
-                    Console.WriteLine("Where do you want the fish?");
+                    Console.WriteLine("Where do you want to fish?");
                     Console.WriteLine("");
                     Console.WriteLine("Lake, River or Ocean?");
                     Console.WriteLine("");
