@@ -14,7 +14,7 @@ namespace DonkMemer
 
 
             // Arrays
-            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell"};
+            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery"};
 
             String[] EightBall = {"Yes", "No"};
 
@@ -34,7 +34,7 @@ namespace DonkMemer
             {       
                 
                 Console.WriteLine("");
-                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, stop");
+                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, stop");
                 Console.WriteLine("");
                 Console.WriteLine("Write a command: ");
                 Console.WriteLine("");
@@ -450,12 +450,60 @@ namespace DonkMemer
                     }
                 }    
 
+                //Bakery
+
+                bool ownsBakery = bool.Parse(File.ReadAllText(@path + @"\bakery.txt"));
+
+                int bakeryPrice = 300;
+
+                if(ownsBakery == true)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("You already own a Bakery!");
+                }
+                if(cmd.Equals(commandlist[11]) && ownsBakery == false)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Do you want to open a Bakery for 300$?");
+                    Console.WriteLine("");
+                    Console.WriteLine("Yes or No");
+                    Console.WriteLine("");
+
+                    string userInput = Console.ReadLine();
+
+                    if(userInput.Equals("Yes") || userInput.Equals("yes"))
+                    {
+                        if(bal >= 300)
+                        {
+                            Console.WriteLine("Succesfully opened a Bakery for 300$.");
+                            ownsBakery = true;
+                            bal = bal-300;
+                            Console.WriteLine("Your current balance: " + bal + currency);
+
+                            StreamWriter writer2 = new StreamWriter(@path + @"\bakery.txt");
+                            writer2.WriteLine(ownsBakery);
+                            writer2.Close();
+
+                        }
+
+
+                    }
+                    if(userInput.Equals("No") || userInput.Equals("no"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("You denied.");
+
+                    }                    
+
+                }
+
                 //Stop
                 if(cmd.Equals(commandlist[5]))
                 {
                     StreamWriter writer = new StreamWriter(@path + @"\balance.txt");
                     writer.WriteLine(bal);
                     writer.Close();
+
                     Console.WriteLine("Stopping...");
                     break;
                 }
