@@ -4,6 +4,10 @@ namespace DonkMemer
 {
     class Program
     {
+
+        // TO DOOD DOO DO
+        // Add Bake command
+        
         static void Main (string[] args)
         {
             // Balance
@@ -14,7 +18,7 @@ namespace DonkMemer
 
 
             // Arrays
-            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery"};
+            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery", "bake"};
 
             String[] EightBall = {"Yes", "No"};
 
@@ -34,7 +38,7 @@ namespace DonkMemer
             {       
                 
                 Console.WriteLine("");
-                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, stop");
+                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, bake, stop");
                 Console.WriteLine("");
                 Console.WriteLine("Write a command: ");
                 Console.WriteLine("");
@@ -456,11 +460,6 @@ namespace DonkMemer
 
                 int bakeryPrice = 300;
 
-                if(ownsBakery == true)
-                {
-                    Console.WriteLine("");
-                    Console.WriteLine("You already own a Bakery!");
-                }
                 if(cmd.Equals(commandlist[11]) && ownsBakery == false)
                 {
                     Console.WriteLine("");
@@ -485,6 +484,12 @@ namespace DonkMemer
                             writer2.Close();
 
                         }
+                        if(ownsBakery == true)
+                        {
+
+                            Console.WriteLine("");
+                             Console.WriteLine("You already own a Bakery!");
+                        }    
 
 
                     }
@@ -494,6 +499,31 @@ namespace DonkMemer
                         Console.WriteLine("You denied.");
 
                     }                    
+
+                }
+
+                //Bake
+
+                if(cmd.Equals(commandlist[12]) && ownsBakery == true && !inventory.Contains("2 Cookies"))
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Do you want to bake cookies for 2$? (Price for dough, chocolate, sugar, etc.)");
+                    Console.WriteLine("");
+                    Console.WriteLine("Yes or No?");
+                    Console.WriteLine("");
+
+                    string cookieInput = Console.ReadLine();
+
+                    if(cookieInput.Equals("Yes") || cookieInput.Equals("yes"))
+                    {
+                        if(bal >= 2)
+                        {
+                            inventory = inventory.Append("2 Cookies").ToArray();
+                            Console.WriteLine("Baked 2 Cookies for 2$! They have been added to your inventory.");
+                            Console.WriteLine("");
+                            Console.WriteLine("Your current balance: " + bal + currency);
+                        }
+                    }
 
                 }
 
