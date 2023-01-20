@@ -4,10 +4,6 @@ namespace DonkMemer
 {
     class Program
     {
-
-        // TO DOOD DOO DO
-        // Add Bake command
-        
         static void Main (string[] args)
         {
             // Balance
@@ -18,7 +14,7 @@ namespace DonkMemer
 
 
             // Arrays
-            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery", "bake"};
+            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery", "bake", "sellCookies"};
 
             String[] EightBall = {"Yes", "No"};
 
@@ -38,7 +34,7 @@ namespace DonkMemer
             {       
                 
                 Console.WriteLine("");
-                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, bake, stop");
+                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, bake, sellCookies, stop");
                 Console.WriteLine("");
                 Console.WriteLine("Write a command: ");
                 Console.WriteLine("");
@@ -535,6 +531,35 @@ namespace DonkMemer
                             Console.WriteLine("");
                             Console.WriteLine("Your current balance: " + bal + currency);
                         }
+                    }
+
+                }
+
+                //Sell cookies
+                if(cmd.Equals(commandlist[13]) && inventory.Contains("2 Cookies"))
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Do you want to sell 2 Cookies for 20$?");
+                    Console.WriteLine("");
+                    Console.WriteLine("Yes or No?");
+                    Console.WriteLine("");
+                    
+                    string sellInput = Console.ReadLine();
+
+                    if(sellInput.Equals("Yes") || sellInput.Equals("yes"))
+                    {
+                        bal = bal+20;
+                        inventory = inventory.Where(x=> x != "2 Cookies").ToArray();
+                        Console.WriteLine("");
+                        Console.WriteLine("Sold 2 Cookies for 20$.");
+                        Console.WriteLine("");
+                        Console.WriteLine("Your current balance is: " + bal + currency);
+                    }
+
+                    if(sellInput.Equals("No") || sellInput.Equals("no"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("You denied.");
                     }
 
                 }
