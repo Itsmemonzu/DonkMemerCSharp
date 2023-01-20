@@ -503,8 +503,13 @@ namespace DonkMemer
                 }
 
                 //Bake
+               if(cmd.Equals(commandlist[12]) && !ownsBakery == true)
+               {
+                Console.WriteLine("");
+                Console.WriteLine("You do not have a bakery to bake cookies in!");
+               }
 
-                if(cmd.Equals(commandlist[12]) && ownsBakery == true && !inventory.Contains("2 Cookies"))
+                if(cmd.Equals(commandlist[12]) && ownsBakery == true)
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Do you want to bake cookies for 2$? (Price for dough, chocolate, sugar, etc.)");
@@ -514,7 +519,13 @@ namespace DonkMemer
 
                     string cookieInput = Console.ReadLine();
 
-                    if(cookieInput.Equals("Yes") || cookieInput.Equals("yes"))
+                    if(cookieInput.Equals("Yes") || cookieInput.Equals("yes") && inventory.Contains("2 Cookies"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("You already have 2 Cookies baked!");
+                    }
+
+                    if(cookieInput.Equals("Yes") || cookieInput.Equals("yes") && !inventory.Contains("2 Cookies"))
                     {
                         if(bal >= 2)
                         {
