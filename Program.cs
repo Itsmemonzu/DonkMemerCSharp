@@ -1,5 +1,6 @@
 using System.Text;
 using System.IO;
+using Newtonsoft.Json;
 namespace DonkMemer
 {
     class Program
@@ -7,9 +8,18 @@ namespace DonkMemer
         static void Main (string[] args)
         {
             // Balance
+
+            //Serialization 
             string path = Environment.CurrentDirectory;
+
+            Money money = new Money { Balance = long.Parse(File.ReadAllText(@path + @"\balance.txt"))};
+
+            string result = JsonConvert.SerializeObject(money);
+
+            //Deserialization
+            Money newMoney=JsonConvert.DeserializeObject<Money>(result);
            
-            long bal = long.Parse(File.ReadAllText(@path + @"\balance.txt"));
+            long bal = newMoney.Balance;
             String currency = "$";
 
 
@@ -63,7 +73,6 @@ namespace DonkMemer
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Your balance is: " + bal + currency);
-                    Console.WriteLine("");
                 }
 
                 //Shoplist
@@ -574,9 +583,11 @@ namespace DonkMemer
                     Console.WriteLine("Stopping...");
                     break;
                 }
-
             }
-
         }
+    }
+    class Money 
+    {
+        public long Balance { get; set ;}
     }
 }
