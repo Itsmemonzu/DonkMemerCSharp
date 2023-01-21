@@ -24,7 +24,7 @@ namespace DonkMemer
 
 
             // Arrays
-            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery", "bake", "sellCookies"};
+            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery", "bake", "sellCookies", "rps"};
 
             String[] EightBall = {"Yes", "No"};
 
@@ -44,7 +44,7 @@ namespace DonkMemer
             {       
                 
                 Console.WriteLine("");
-                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, bake, sellCookies, stop");
+                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, bake, sellCookies, rps(RockPaperScissors), stop");
                 Console.WriteLine("");
                 Console.WriteLine("Write a command: ");
                 Console.WriteLine("");
@@ -569,6 +569,103 @@ namespace DonkMemer
                     {
                         Console.WriteLine("");
                         Console.WriteLine("You denied.");
+                    }
+
+                }
+
+                //Rps
+
+                if(cmd.Equals(commandlist[14]))
+                {
+                    string[] rps = {"Rock", "Paper", "Scissors"};
+
+                    Random randRps = new Random();  
+                    int indexRps = randRps.Next(rps.Length);  
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Choose Rock, Paper or Scissors: ");
+                    Console.WriteLine("");
+                    
+                    string rpsUser = Console.ReadLine();
+                    string rpsBot = rps[indexRps];
+
+
+                    //Rock
+                    if(rpsUser.Equals("Rock") || rpsUser.Equals("rock") && rpsBot.Equals("Rock"))
+                    {
+                        string Bot = "Rock";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("That was a draw!");
+                    }
+                    if(rpsUser.Equals("Rock") || rpsUser.Equals("rock") && rpsBot.Equals("Paper"))
+                    {
+                        string Bot = "Paper";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("You lost!");
+                    }
+                    if(rpsUser.Equals("Rock") || rpsUser.Equals("rock") && rpsBot.Equals("Scissors"))
+                    {
+                        string Bot = "Scissors";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("You won!");
+                    }
+
+                    //Paper
+                    if(rpsUser.Equals("Paper") || rpsUser.Equals("paper") && rpsBot.Equals("Paper"))
+                    {
+                        string Bot = "Paper";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("That was a draw!");
+                    }
+                    if(rpsUser.Equals("Paper") || rpsUser.Equals("paper") && rpsBot.Equals("Scissors"))
+                    {
+                        string Bot = "Scissors";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("You lost!");
+                    }
+                    if(rpsUser.Equals("Paper") || rpsUser.Equals("paper") && rpsBot.Equals("Rock"))
+                    {
+                        string Bot = "Rock";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("You won!");
+                    }
+
+                    //Scissors
+                    if(rpsUser.Equals("Scissors") || rpsUser.Equals("scissors") && rpsBot.Equals("Scissors"))
+                    {
+                        string Bot = "Scissors";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("That was a draw!");
+                    }
+                    if(rpsUser.Equals("Scissors") || rpsUser.Equals("scissors") && rpsBot.Equals("Rock"))
+                    {
+                        string Bot = "Rock";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("You lost!");
+                    }
+                    if(rpsUser.Equals("Scissors") || rpsUser.Equals("scissors") && rpsBot.Equals("Paper"))
+                    {
+                        string Bot = "Paper";
+                        Console.WriteLine("");
+                        Console.WriteLine("You choose " + rpsUser + " and bot choose " +  Bot);
+                        Console.WriteLine("");
+                        Console.WriteLine("You won!");
                     }
 
                 }
