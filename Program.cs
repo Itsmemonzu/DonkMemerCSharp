@@ -28,7 +28,7 @@ namespace DonkMemer
 
             String[] EightBall = {"Yes", "No"};
 
-            String[] shoplist = {"HitBlast's Refurbished M1 Mac", "+100 Chetona", "Bleach", "HFC Chicken"};
+            String[] shoplist = {"HitBlast's Refurbished M1 Mac", "+100 Chetona", "Bleach", "HFC Chicken", "Pickaxe"};
 
             String[] inventory = new string[] {"Balu", "10 IQ", "Shovel"};
 
@@ -86,6 +86,7 @@ namespace DonkMemer
                     Console.WriteLine("No 1 " + shoplist[1] + " Price: 50$");
                     Console.WriteLine("No 2 " + shoplist[2] + " Price: 25$");
                     Console.WriteLine("No 3 " + shoplist[3] + " Price: 15$");
+                    Console.WriteLine("No 3 " + shoplist[4] + " Price: 40$");
                     Console.WriteLine("");
                 }    
 
@@ -100,10 +101,11 @@ namespace DonkMemer
                     Console.WriteLine("No 1 " + shoplist[1] + " Price: 50$");
                     Console.WriteLine("No 2 " + shoplist[2] + " Price: 25$");
                     Console.WriteLine("No 3 " + shoplist[3] + " Price: 15$");
+                    Console.WriteLine("No 4 " + shoplist[4] + " Price: 40$");
                     Console.WriteLine("");
 
                     Console.WriteLine("What do you want to buy? Buying command: buy {itemNumber} eg. buy 1");
-                    String[] buyCmds = {"buy 0", "buy 1", "buy 2", "buy 3"};
+                    String[] buyCmds = {"buy 0", "buy 1", "buy 2", "buy 3", "buy 4"};
                     Console.WriteLine("");
                     String buyInput = Console.ReadLine();
                     
@@ -151,6 +153,17 @@ namespace DonkMemer
                             Console.WriteLine("Succesfully bought " + shoplist[3] + "!") ;
                             bal = bal-15;
                             inventory = inventory.Append("HFC Chicken").ToArray();
+                            Console.WriteLine("");
+                            Console.WriteLine("Current balance: " + bal + currency);
+                            Console.WriteLine("");
+
+                        }
+                        if(buyInput.Equals(buyCmds[4]) && bal >= 40 && !inventory.Contains("Pickaxe"))
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Succesfully bought " + shoplist[4] + "!") ;
+                            bal = bal-40;
+                            inventory = inventory.Append("Pickaxe").ToArray();
                             Console.WriteLine("");
                             Console.WriteLine("Current balance: " + bal + currency);
                             Console.WriteLine("");
