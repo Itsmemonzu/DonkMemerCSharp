@@ -683,6 +683,40 @@ namespace DonkMemer
 
                 }
 
+                // Mine
+                if(cmd.Equals(commandlist[15]) && inventory.Contains("Pickaxe"))
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Do you want to mine");
+                    Console.WriteLine("");
+                    Console.WriteLine("Yes or No?");
+                    Console.WriteLine("");
+
+                    string mineInput = Console.ReadLine();
+                    if (mineInput.Equals("Yes") || mineInput.Equals("yes"))
+                    {
+                        Random randMaterial = new Random();  
+                        int indexMaterial = randMaterial.Next(randomMaterial.Length);  
+                    
+                       Console.WriteLine("");
+                       Console.WriteLine("You found: " + randomMaterial[indexMaterial]);
+
+                       string Material = randomMaterial[indexMaterial];
+
+                       inventory = inventory.Append(Material).ToArray();
+                    }
+                    if (mineInput.Equals("No") || mineInput.Equals("no"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("You denied.");
+                    }
+                } 
+                if(cmd.Equals(commandlist[15]) && !inventory.Contains("Pickaxe"))
+                {   
+                    Console.WriteLine("");
+                    Console.WriteLine("You do not have a Pickaxe to mine with!");
+                }
+
                 //Stop
                 if(cmd.Equals(commandlist[5]))
                 {
