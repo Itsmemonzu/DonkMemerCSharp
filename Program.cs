@@ -24,7 +24,7 @@ namespace DonkMemer
 
 
             // Arrays
-            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery", "bake", "sellCookies", "rps"};
+            String[] commandlist = {"8ball", "bal", "shoplist", "buy", "bet", "stop", "inventory", "beg", "fortunecookie", "fish", "sell", "bakery", "bake", "sellCookies", "rps", "mine"};
 
             String[] EightBall = {"Yes", "No"};
 
@@ -44,7 +44,7 @@ namespace DonkMemer
             {       
                 
                 Console.WriteLine("");
-                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, bake, sellCookies, rps(RockPaperScissors), stop");
+                Console.WriteLine("Command list: 8ball, bal, shoplist, buy, bet, inventory, beg, fortunecookie, fish, sell, bakery, bake, sellCookies, rps(RockPaperScissors), mine, stop");
                 Console.WriteLine("");
                 Console.WriteLine("Write a command: ");
                 Console.WriteLine("");
@@ -122,7 +122,6 @@ namespace DonkMemer
                             Console.WriteLine("");
 
                             Console.WriteLine("Current balance: " + bal + currency);
-                            Console.WriteLine("");
 
                         }
                         if(buyInput.Equals(buyCmds[1]) && bal >= 50 && !inventory.Contains("+100 Chetona"))
@@ -133,7 +132,6 @@ namespace DonkMemer
                             inventory = inventory.Append("+100 Chetona").ToArray();
                             Console.WriteLine("");
                             Console.WriteLine("Current balance: " + bal + currency);
-                            Console.WriteLine("");
 
                         }
                         if(buyInput.Equals(buyCmds[2]) && bal >= 25 && !inventory.Contains("Bleach"))
@@ -144,7 +142,6 @@ namespace DonkMemer
                             inventory = inventory.Append("Bleach").ToArray();
                             Console.WriteLine("");
                             Console.WriteLine("Current balance: " + bal + currency);
-                            Console.WriteLine("");
 
                         }
                         if(buyInput.Equals(buyCmds[3]) && bal >= 15 && !inventory.Contains("HFC Chicken"))
@@ -155,7 +152,6 @@ namespace DonkMemer
                             inventory = inventory.Append("HFC Chicken").ToArray();
                             Console.WriteLine("");
                             Console.WriteLine("Current balance: " + bal + currency);
-                            Console.WriteLine("");
 
                         }
                         if(buyInput.Equals(buyCmds[4]) && bal >= 40 && !inventory.Contains("Pickaxe"))
@@ -166,19 +162,19 @@ namespace DonkMemer
                             inventory = inventory.Append("Pickaxe").ToArray();
                             Console.WriteLine("");
                             Console.WriteLine("Current balance: " + bal + currency);
-                            Console.WriteLine("");
 
                         }
 
                     }
                     catch
-                    {
+                    {   
                         Console.WriteLine("Something is wrong!");
                     }
 
                 
 
                 }
+
 
                 //Bet
 
@@ -441,10 +437,12 @@ namespace DonkMemer
 
                     }
                 }
-                string[] fishNames = {"Green Chromis", "Firefish", "Mandarinfish", "Maroon Clownfish", "Tomato Clownfish", "Coral Beauty", "Flame Angelfish", "Eel", "Common Carp", "Tench", "Bream", "Pike", "Chub", "Rainbow Trout", "Carp", "Black Bullhead", "Green Sunfish", "Crappie", "Channel Catfish", "Bluegill", "Largemouth Bass"};
 
                 //Sell
-                if(cmd.Equals(commandlist[10]) && inventory.Intersect(fishNames).Any())
+                string[] fishNames = {"Green Chromis", "Firefish", "Mandarinfish", "Maroon Clownfish", "Tomato Clownfish", "Coral Beauty", "Flame Angelfish", "Eel", "Common Carp", "Tench", "Bream", "Pike", "Chub", "Rainbow Trout", "Carp", "Black Bullhead", "Green Sunfish", "Crappie", "Channel Catfish", "Bluegill", "Largemouth Bass"};
+                string[] randomMaterial = {"Diamond", "Emerald", "Ruby", "Redstone", "Lapiz", "Silver", "Iron", "Copper"};
+
+                if(cmd.Equals(commandlist[10]) && inventory.Intersect(fishNames).Any() || inventory.Intersect(randomMaterial).Any())
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Your inventory is: ");
@@ -455,7 +453,7 @@ namespace DonkMemer
 
                     string sellingItem = Console.ReadLine();
 
-                    if (sellingItem.Equals("Green Chromis") || sellingItem.Equals("Firefish") || sellingItem.Equals("Mandarinfish") ||  sellingItem.Equals("Maroon Clownfish") || sellingItem.Equals("Tomato Clownfish") || sellingItem.Equals("Coral Beauty") || sellingItem.Equals("Flame Angelfish") || sellingItem.Equals("Eel") || sellingItem.Equals("Common Carp") || sellingItem.Equals("Tench") || sellingItem.Equals("Bream") || sellingItem.Equals("Pike") || sellingItem.Equals("Chub") || sellingItem.Equals("Rainbow Trout") || sellingItem.Equals("Carp") || sellingItem.Equals("Black Bullhead") || sellingItem.Equals("Green Sunfish") || sellingItem.Equals("Crappie") || sellingItem.Equals("Channel Catfish") || sellingItem.Equals("Bluegill") || sellingItem.Equals("Largemouth Bass"))
+                    if (sellingItem.Equals("Green Chromis") || sellingItem.Equals("Firefish") || sellingItem.Equals("Mandarinfish") ||  sellingItem.Equals("Maroon Clownfish") || sellingItem.Equals("Tomato Clownfish") || sellingItem.Equals("Coral Beauty") || sellingItem.Equals("Flame Angelfish") || sellingItem.Equals("Eel") || sellingItem.Equals("Common Carp") || sellingItem.Equals("Tench") || sellingItem.Equals("Bream") || sellingItem.Equals("Pike") || sellingItem.Equals("Chub") || sellingItem.Equals("Rainbow Trout") || sellingItem.Equals("Carp") || sellingItem.Equals("Black Bullhead") || sellingItem.Equals("Green Sunfish") || sellingItem.Equals("Crappie") || sellingItem.Equals("Channel Catfish") || sellingItem.Equals("Bluegill") || sellingItem.Equals("Largemouth Bass") || sellingItem.Equals("Diamond") || sellingItem.Equals("Iron") || sellingItem.Equals("Copper") || sellingItem.Equals("Emerald") || sellingItem.Equals("Lapiz") || sellingItem.Equals("Ruby") || sellingItem.Equals("Redstone") || sellingItem.Equals("Silver"))
                     {
                         long[] fishPrices = {3, 4, 5, 7, 9, 12, 13, 2, 15, 17, 16, 19, 20, 22};
                         Random price = new Random();  
