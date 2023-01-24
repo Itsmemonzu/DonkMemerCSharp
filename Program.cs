@@ -173,7 +173,7 @@ namespace DonkMemer
                     }
                     catch
                     {
-
+                        Console.WriteLine("Something is wrong!");
                     }
 
                 
