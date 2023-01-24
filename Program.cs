@@ -442,7 +442,7 @@ namespace DonkMemer
                 string[] fishNames = {"Green Chromis", "Firefish", "Mandarinfish", "Maroon Clownfish", "Tomato Clownfish", "Coral Beauty", "Flame Angelfish", "Eel", "Common Carp", "Tench", "Bream", "Pike", "Chub", "Rainbow Trout", "Carp", "Black Bullhead", "Green Sunfish", "Crappie", "Channel Catfish", "Bluegill", "Largemouth Bass"};
                 string[] randomMaterial = {"Diamond", "Emerald", "Ruby", "Redstone", "Lapiz", "Silver", "Iron", "Copper"};
 
-                if(cmd.Equals(commandlist[10]) && inventory.Intersect(fishNames).Any() || inventory.Intersect(randomMaterial).Any())
+                if(cmd.Equals(commandlist[10]) && inventory.Intersect(fishNames).Any() && inventory.Intersect(randomMaterial).Any())
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Your inventory is: ");
@@ -701,7 +701,25 @@ namespace DonkMemer
 
                        string Material = randomMaterial[indexMaterial];
 
-                       inventory = inventory.Append(Material).ToArray();
+                       if(inventory.Contains(Material))
+                       {
+                            long[] materialPrices = {3, 4, 5, 7, 9, 12, 13, 2, 15, 17, 16, 19, 20, 22};
+                            Console.WriteLine("");
+                            Console.WriteLine("You already own this matria! Selling the found fish.");
+                            Random randPrice = new Random();  
+                            long indexPrice = randPrice.Next(materialPrices.Length);  
+                            bal = bal+indexPrice;
+                            
+                            Console.WriteLine("");
+                            Console.WriteLine("Your current balance: " + bal + currency);
+                       }
+                       if(!inventory.Contains(Material))
+                       {
+                            inventory = inventory.Append(Material).ToArray();
+                            Console.WriteLine("");
+                            Console.WriteLine("The material has been added to your inventory. To sell the fish, please use the sell command. \n Example: sell {fishName}, sell Garp");
+
+                       }
                     }
                     if (mineInput.Equals("No") || mineInput.Equals("no"))
                     {
