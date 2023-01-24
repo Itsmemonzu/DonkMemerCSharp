@@ -442,7 +442,34 @@ namespace DonkMemer
                 string[] fishNames = {"Green Chromis", "Firefish", "Mandarinfish", "Maroon Clownfish", "Tomato Clownfish", "Coral Beauty", "Flame Angelfish", "Eel", "Common Carp", "Tench", "Bream", "Pike", "Chub", "Rainbow Trout", "Carp", "Black Bullhead", "Green Sunfish", "Crappie", "Channel Catfish", "Bluegill", "Largemouth Bass"};
                 string[] randomMaterial = {"Diamond", "Emerald", "Ruby", "Redstone", "Lapiz", "Silver", "Iron", "Copper"};
 
-                if(cmd.Equals(commandlist[10]) && inventory.Intersect(fishNames).Any() && inventory.Intersect(randomMaterial).Any())
+                if(cmd.Equals(commandlist[10]) && inventory.Intersect(fishNames).Any())
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Your inventory is: ");
+                    Console.WriteLine(string.Join("\n", inventory));
+                    Console.WriteLine("");
+                    Console.WriteLine("What do you want to sell?");
+                    Console.WriteLine("");
+
+                    string sellingItem = Console.ReadLine();
+
+                    if (sellingItem.Equals("Green Chromis") || sellingItem.Equals("Firefish") || sellingItem.Equals("Mandarinfish") ||  sellingItem.Equals("Maroon Clownfish") || sellingItem.Equals("Tomato Clownfish") || sellingItem.Equals("Coral Beauty") || sellingItem.Equals("Flame Angelfish") || sellingItem.Equals("Eel") || sellingItem.Equals("Common Carp") || sellingItem.Equals("Tench") || sellingItem.Equals("Bream") || sellingItem.Equals("Pike") || sellingItem.Equals("Chub") || sellingItem.Equals("Rainbow Trout") || sellingItem.Equals("Carp") || sellingItem.Equals("Black Bullhead") || sellingItem.Equals("Green Sunfish") || sellingItem.Equals("Crappie") || sellingItem.Equals("Channel Catfish") || sellingItem.Equals("Bluegill") || sellingItem.Equals("Largemouth Bass") || sellingItem.Equals("Diamond") || sellingItem.Equals("Iron") || sellingItem.Equals("Copper") || sellingItem.Equals("Emerald") || sellingItem.Equals("Lapiz") || sellingItem.Equals("Ruby") || sellingItem.Equals("Redstone") || sellingItem.Equals("Silver"))
+                    {
+                        long[] fishPrices = {3, 4, 5, 7, 9, 12, 13, 2, 15, 17, 16, 19, 20, 22};
+                        Random price = new Random();  
+                        long sellingPrice = price.Next(fishPrices.Length);  
+
+                        Console.WriteLine("");
+                        Console.WriteLine("Selling " + sellingItem);
+                        bal = bal+sellingPrice;
+                        Console.WriteLine("");
+                        Console.WriteLine("Your current balance: " + bal + currency);
+                        inventory = inventory.Where(x=> x != sellingItem).ToArray();
+                        ;
+
+                    }
+                }   
+                if(cmd.Equals(commandlist[10]) && inventory.Intersect(randomMaterial).Any())
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Your inventory is: ");
@@ -469,6 +496,7 @@ namespace DonkMemer
 
                     }
                 }    
+ 
 
                 //Bakery
 
