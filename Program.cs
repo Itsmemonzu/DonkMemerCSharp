@@ -561,7 +561,12 @@ namespace DonkMemer
                         Console.WriteLine("");
                         Console.WriteLine("You denied.");
 
-                    }                    
+                    }
+                    if(!userInput.Equals("Yes") && !userInput.Equals("yes") && !userInput.Equals("No") && !userInput.Equals("no"))   
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Invalid Input");
+                    }             
 
                 }
 
