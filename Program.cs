@@ -164,6 +164,13 @@ namespace DonkMemer
                             Console.WriteLine("Current balance: " + bal + currency);
 
                         }
+                        if(!buyInput.Equals(buyCmds[0]) && !buyInput.Equals(buyCmds[1]) && !buyInput.Equals(buyCmds[2]) && !buyInput.Equals(buyCmds[3]) && !buyInput.Equals(buyCmds[4]))
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Invalid Input!");
+
+                        }
+
 
                     }
                     catch
