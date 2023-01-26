@@ -448,6 +448,11 @@ namespace DonkMemer
 
 
                     }
+                    if(!fishingPlace.Equals("Lake") && !fishingPlace.Equals("lake") && !fishingPlace.Equals("River") && !fishingPlace.Equals("river") && !fishingPlace.Equals("ocean") && !fishingPlace.Equals("Ocean"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Invalid Input!");
+                    }
                 }
 
                 //Sell
