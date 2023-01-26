@@ -519,7 +519,7 @@ namespace DonkMemer
                     Console.WriteLine("You do not have any sellable items!");
  
                 }
-                
+
                 //Bakery
 
                 bool ownsBakery = bool.Parse(File.ReadAllText(@path + @"\bakery.txt"));
@@ -549,15 +549,7 @@ namespace DonkMemer
                             writer2.WriteLine(ownsBakery);
                             writer2.Close();
 
-                        }
-                        if(ownsBakery == true)
-                        {
-
-                            Console.WriteLine("");
-                             Console.WriteLine("You already own a Bakery!");
-                        }    
-
-
+                        } 
                     }
                     if(userInput.Equals("No") || userInput.Equals("no"))
                     {
