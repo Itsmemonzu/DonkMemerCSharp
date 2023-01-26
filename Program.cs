@@ -331,6 +331,11 @@ namespace DonkMemer
                         Console.WriteLine("You denied the Fortune Cookie.");
                         Console.WriteLine("Bad luck might strike on you...");
                     }
+                    if(!answer.Equals("No") && !answer.Equals("no") && !answer.Equals("Yes") && !answer.Equals("yes"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Invalid Input!");
+                    }
                 }
 
                 //Fish
