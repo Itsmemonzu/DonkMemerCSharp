@@ -609,6 +609,11 @@ namespace DonkMemer
                         Console.WriteLine("");
                         Console.WriteLine("You denied.");
                     }
+                    if(!cookieInput.Equals("No") && !cookieInput.Equals("no") && !cookieInput.Equals("yes") && !cookieInput.Equals("Yes"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Invalid Input!");
+                    }
 
                 }
 
