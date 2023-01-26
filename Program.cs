@@ -525,6 +525,11 @@ namespace DonkMemer
                 bool ownsBakery = bool.Parse(File.ReadAllText(@path + @"\bakery.txt"));
 
                 int bakeryPrice = 300;
+                if(cmd.Equals(commandlist[11]) && ownsBakery == true)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("You already own a bakery!");
+                }
 
                 if(cmd.Equals(commandlist[11]) && ownsBakery == false)
                 {
