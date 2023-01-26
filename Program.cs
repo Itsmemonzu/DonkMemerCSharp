@@ -512,9 +512,14 @@ namespace DonkMemer
                         ;
 
                     }
-                }    
+                }  
+                if(cmd.Equals(commandlist[10]) && !inventory.Intersect(randomMaterial).Any() && !inventory.Intersect(fishNames).Any())
+                {  
+                    Console.WriteLine("");
+                    Console.WriteLine("You do not have any sellable items!");
  
-
+                }
+                
                 //Bakery
 
                 bool ownsBakery = bool.Parse(File.ReadAllText(@path + @"\bakery.txt"));
