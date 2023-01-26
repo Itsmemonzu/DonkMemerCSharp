@@ -604,6 +604,11 @@ namespace DonkMemer
                             Console.WriteLine("Your current balance: " + bal + currency);
                         }
                     }
+                    if(cookieInput.Equals("No") || cookieInput.Equals("no"))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("You denied.");
+                    }
 
                 }
 
